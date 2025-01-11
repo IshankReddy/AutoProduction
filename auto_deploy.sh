@@ -23,6 +23,7 @@ deploy_frontend() {
     sudo systemctl restart apache2 && log_msg $? "5. restart apache2"
 
     cd /var/www/html || { echo "6. cd to /var/www/html failed"; exit 1; }
+    sudo rm index.html
     sudo cp /tmp/UI.tar . && log_msg $? "7. cp UI.tar"
     sudo tar -xvf UI.tar && log_msg $? "8. extract UI.tar"
     sudo rm UI.tar && log_msg $? "9. remove UI.tar"
