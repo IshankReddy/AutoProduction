@@ -61,6 +61,8 @@ deploy_backend() {
     # Avoid sudo su; use sudo for specific commands
     sudo rm -rf /home/ubuntu/anaconda3
     sudo rm -rf /kaviwebdesign
+    cd /
+    sudo mkdir kaviwebdesign
 
     for file in BACKEND.tar DB.tar; do
         sudo cp /tmp/$file /kaviwebdesign/ && log_msg $? "copy $file"
